@@ -1,0 +1,22 @@
+1010 [main] INFO  org.mortbay.log - Logging to Logger[org.mortbay.log] via org.mortbay.log.Slf4jLog
+1539 [main] INFO  MockTestsAccuweather - WireMockServer запущен, localhost = 8080
+2320 [main] INFO  MockTestsAccuweather - Установлена заглушка на автоподбор городов
+2334 [main] INFO  MockTestsAccuweather - создан http клиент 
+2391 [main] INFO  MockTestsAccuweather - проверка статуса ответа
+2402 [main] INFO  MockTestsAccuweather - проверка названия города и его типа в ответе
+2433 [main] INFO  MockTestsAccuweather - WireMockServer остановлен, localhost = 8080
+896  [main] INFO  org.mortbay.log - Logging to Logger[org.mortbay.log] via org.mortbay.log.Slf4jLog
+990  [main] INFO  MockTestsAccuweather - WireMockServer запущен, localhost = 8080
+1883 [main] INFO  MockTestsAccuweather - Установлена заглушка на автоподбор городов
+1899 [main] INFO  MockTestsAccuweather - создан http клиент 
+1954 [main] INFO  MockTestsAccuweather - проверка статуса ответа
+1965 [main] INFO  MockTestsAccuweather - проверка названия города и его типа в ответе
+1994 [main] INFO  MockTestsAccuweather - WireMockServer остановлен, localhost = 8080
+1014 [main] INFO  org.mortbay.log - Logging to Logger[org.mortbay.log] via org.mortbay.log.Slf4jLog
+1152 [main] INFO  MockTestsAccuweather - WireMockServer запущен, localhost = 8080
+2078 [main] INFO  MockTestsAccuweather - Установлена заглушка на запрос погоды на 10 дней
+2100 [main] INFO  MockTestsAccuweather - создан http клиент
+2180 [main] INFO  MockTestsAccuweather - проверка статуса ответа
+2201 [main] INFO  MockTestsAccuweather - проверка размера списка ответа
+2202 [main] INFO  MockTestsAccuweather - проверка что мин температура не превышает максимальную
+2239 [main] INFO  MockTestsAccuweather - WireMockServer остановлен, localhost = 8080
