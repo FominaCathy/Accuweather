@@ -15,6 +15,14 @@ public class UnitTemperature {
     @JsonProperty("UnitType")
     private Integer unitType;
 
+    public UnitTemperature(Double value, String unit, Integer unitType) {
+        this.value = value;
+        this.unit = unit;
+        this.unitType = unitType;
+    }
+
+    public UnitTemperature() {
+    }
 
     @JsonProperty("Value")
     public Double getValue() {

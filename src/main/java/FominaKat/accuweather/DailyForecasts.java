@@ -12,6 +12,15 @@ public class DailyForecasts {
     @JsonProperty("DailyForecasts")
     private List<DayForecast> dailyForecasts;
 
+    public DailyForecasts(List<DayForecast> dailyForecasts) {
+        this.dailyForecasts = dailyForecasts;
+    }
+
+    public DailyForecasts() {
+
+    }
+
+
     public List<DayForecast> getDailyForecasts() {
         return dailyForecasts;
     }

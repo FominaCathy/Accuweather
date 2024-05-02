@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,6 +18,15 @@ public class Location {
     private String type;
 
     private String country;
+
+    public Location(String key, String city, String type) {
+        this.key = key;
+        this.city = city;
+        this.type = type;
+    }
+
+    public Location() {
+    }
 
     public String getKey() {
         return key;
@@ -53,8 +61,8 @@ public class Location {
     public void setType(String type) {
         this.type = type;
     }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
+//
+//    public void setCountry(String country){
+//        this.country = country;
+//    }
 }

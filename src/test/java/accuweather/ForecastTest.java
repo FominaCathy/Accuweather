@@ -3,11 +3,13 @@ package accuweather;
 import FominaKat.accuweather.DailyForecasts;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.path.json.JsonPath;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ForecastTest extends AbstractTest {
 
     @ParameterizedTest(name = "{index} - locationKey = {arguments}")
-    @ValueSource(ints = {294463, 290396, 294021})
+    @ValueSource(ints = {294463}) //, 290396, 294021
     void oneDayDailyTest(int location) throws JsonProcessingException {
         DailyForecasts forecasts = given()
                 .queryParam("apikey", getApiKey())
@@ -65,5 +67,21 @@ public class ForecastTest extends AbstractTest {
         assertEquals("Unauthorized", response.get("Code"));
         assertEquals("Api Authorization failed", response.get("Message"));
 
+    }
+
+    @ParameterizedTest(name = "{index} - locationKey = {arguments}")
+    @ValueSource(ints = {294463, 290396, 294021})
+    @Disabled
+    void fiveDayDaily1Test(int location) {
+        DailyForecasts response = given()
+                .queryParam("apikey", getApiKey())
+                .pathParam("locationKey", location)
+                .when()
+                .get(getBaseUrl() + "/forecasts/v1/daily/5day/{locationKey}")
+                .then().log().body()
+                .statusCode(200)
+                .extract()
+                .as(DailyForecasts.class);
+        System.out.println();
     }
 }

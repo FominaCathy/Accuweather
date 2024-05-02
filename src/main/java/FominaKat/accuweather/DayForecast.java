@@ -15,6 +15,14 @@ public class DayForecast {
     @JsonProperty("Temperature")
     private Temperature temperature;
 
+    public DayForecast(String date, Temperature temperature) {
+        this.date = date;
+        this.temperature = temperature;
+    }
+
+    public DayForecast() {
+    }
+
     public String getDate() {
         return date;
     }

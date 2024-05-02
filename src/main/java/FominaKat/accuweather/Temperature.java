@@ -13,6 +13,14 @@ public class Temperature {
     @JsonProperty("Maximum")
     private UnitTemperature maximum;
 
+    public Temperature(UnitTemperature minimum, UnitTemperature maximum) {
+        this.minimum = minimum;
+        this.maximum = maximum;
+    }
+
+    public Temperature() {
+
+    }
 
     @JsonProperty("Minimum")
     public UnitTemperature getMinimum() {
