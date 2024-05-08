@@ -2,8 +2,13 @@ package accuweather;
 
 import FominaKat.accuweather.DailyForecasts;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.Story;
 import io.restassured.path.json.JsonPath;
+import jdk.jfr.Description;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -19,8 +24,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ForecastTest extends AbstractTest {
 
     @ParameterizedTest(name = "{index} - locationKey = {arguments}")
-    @ValueSource(ints = {294463}) //, 290396, 294021
-    void oneDayDailyTest(int location) throws JsonProcessingException {
+    @ValueSource(ints = {294463, 290396, 294021}) //
+    @Owner("Fomina Kat")
+    @DisplayName("Check one day daily")
+    @Description("checking the weather for one day")
+    @Story(value = "Forecast")
+    void oneDayDailyTest(int location) {
         DailyForecasts forecasts = given()
                 .queryParam("apikey", getApiKey())
                 .pathParam("locationKey", location)
@@ -53,6 +62,10 @@ public class ForecastTest extends AbstractTest {
 
     @ParameterizedTest(name = "{index} - locationKey = {arguments}")
     @ValueSource(ints = {294463, 290396, 294021})
+    @Owner("Fomina Kat")
+    @DisplayName("Check fifteen day daily")
+    @Description("checking the weather for fifteen day")
+    @Story(value = "Forecast")
     void fifteenDayDailyResponse401Test(int location) {
         JsonPath response = given()
                 .queryParam("apikey", getApiKey())
@@ -71,7 +84,10 @@ public class ForecastTest extends AbstractTest {
 
     @ParameterizedTest(name = "{index} - locationKey = {arguments}")
     @ValueSource(ints = {294463, 290396, 294021})
-    @Disabled
+    @Owner("Fomina Kat")
+    @DisplayName("Check five day daily")
+    @Description("checking the weather for five day")
+    @Story(value = "Forecast")
     void fiveDayDaily1Test(int location) {
         DailyForecasts response = given()
                 .queryParam("apikey", getApiKey())

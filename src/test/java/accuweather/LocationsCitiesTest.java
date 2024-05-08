@@ -1,6 +1,10 @@
 package accuweather;
 
 import FominaKat.accuweather.Location;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
+import jdk.jfr.Description;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -16,6 +20,11 @@ public class LocationsCitiesTest extends AbstractTest {
             "Samara, Russia",
             "Omsk, Russia",
             "Rome, Italy"})
+
+    @Owner("Fomina Kat")
+    @DisplayName("Check autocomplete city")
+    @Description("checking autocomplete of the search text")
+    @Story(value = "Locations")
     void autocompleteCityTest(String city, String country) {
         List<Location> listCity = given()
                 .queryParam("apikey", getApiKey())
